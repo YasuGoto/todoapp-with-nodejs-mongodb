@@ -48,7 +48,10 @@ formDOM.addEventListener("submit", async (event) => {
   const name = inputDOM.value;
 
   try {
-    await axios.post("/api/v1/tasks", { name: name });
+    await axios.post(
+      "https://todoapp-with-nodejs-mongodb-bg20.onrender.com/api/v1/tasks",
+      { name: name }
+    );
     showTasks();
     formAlertDOM.style.display = "display";
     formAlertDOM.innerHTML = "タスクを追加しました";
@@ -71,7 +74,9 @@ tasksDOM.addEventListener("click", async (event) => {
   if (element.parentElement.classList.contains("delete-btn")) {
     const id = element.parentElement.dataset.id;
     try {
-      await axios.delete(`/api/v1/tasks/${id}`);
+      await axios.delete(
+        `https://todoapp-with-nodejs-mongodb-bg20.onrender.com/api/v1/tasks/${id}`
+      );
       showTasks();
     } catch (err) {
       console.log(err);
