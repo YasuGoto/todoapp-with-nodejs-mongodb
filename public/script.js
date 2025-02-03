@@ -7,7 +7,9 @@ const formAlertDOM = document.querySelector(".form-alert");
 const showTasks = async () => {
   try {
     // 自作のAPIを叩く
-    const { data: tasks } = await axios.get("/api/v1/tasks");
+    const { data: tasks } = await axios.get(
+      "https://todoapp-with-nodejs-mongodb-bg20.onrender.com/api/v1/tasks"
+    );
 
     //タスクが1つもない時
     if (tasks.length < 1) {

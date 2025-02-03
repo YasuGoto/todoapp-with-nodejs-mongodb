@@ -11,7 +11,9 @@ console.log(id);
 // 1つの特定の特定のタスクを取得する
 const showTask = async () => {
   try {
-    const { data: task } = await axios.get(`/api/v1/tasks/${id}`);
+    const { data: task } = await axios.get(
+      `https://todoapp-with-nodejs-mongodb-bg20.onrender.com/api/v1/tasks/${id}`
+    );
     const { _id, completed, name } = task;
     taskIDDOM.textContent = _id;
     taskNameDOM.value = name;
