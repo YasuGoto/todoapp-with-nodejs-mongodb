@@ -9,10 +9,7 @@ app.use(express.json());
 app.use(express.static("./public"));
 
 // ルーティング設定
-app.use(
-  "https://todoapp-with-nodejs-mongodb-bg20.onrender.com/api/v1/tasks",
-  taskRoute
-);
+app.use("/api/v1/tasks", taskRoute);
 
 // DB接続
 const start = async () => {
