@@ -33,13 +33,10 @@ editFormDOM.addEventListener("submit", async (event) => {
   try {
     const taskName = taskNameDOM.value;
     const taskCompleted = taskCompletedDOM.checked;
-    const { data: task } = await axios.patch(
-      `https://todoapp-with-nodejs-mongodb-bg20.onrender.com/api/v1/tasks/${id}`,
-      {
-        name: taskName,
-        completed: taskCompleted,
-      }
-    );
+    const { data: task } = await axios.patch(`/api/v1/tasks/${id}`, {
+      name: taskName,
+      completed: taskCompleted,
+    });
     formAlertDOM.style.display = "block";
     formAlertDOM.textContent = "編集に成功しました";
     formAlertDOM.classList.add("text-success");
