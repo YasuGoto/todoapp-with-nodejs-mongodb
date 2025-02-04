@@ -17,10 +17,7 @@ app.use(
 // DB接続
 const start = async () => {
   try {
-    // await connectDB(process.env.MONGO_URL);
-    await connectDB(
-      "mongodb+srv://myis0122:Yy19980122@cluster0.ehy8u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    await connectDB(process.env.MONGO_URL);
     console.log("mongoDB接続成功");
     app.listen(PORT, console.log("サーバーが立ち上がりました"));
   } catch (err) {
